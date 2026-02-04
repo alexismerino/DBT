@@ -1,0 +1,13 @@
+{{
+    config(tags=["facts","sales","dash_sales_bi"])
+}}
+
+SELECT 
+    DDATE,
+    ID_SALESPERSON,
+    ID_CARMAKE,
+    TOTALSALE,
+    TOTALCOM
+FROM {{ref("psg_monthly_sales_make")}} AS psgm
+LEFT JOIN {{ref("dim_carmake")}}    AS dimcm ON psgm.CARMAKE = dimcm.CARMAKE
+LEFT JOIN {{ref("dim_saleperson")}}  AS dimsp ON psgm.SALESPERSON = dimsp.SALESPERSON
