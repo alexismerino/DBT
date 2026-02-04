@@ -1,0 +1,48 @@
+version: 2
+models:
+-   name: fct_monthly_sales #Tabla de hechos
+    columns:
+      - name: ID_SALESPERSON
+        description: "Clave foránea a la  dimensión de vendendores (dim_saleperson)"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_saleperson')
+              field: ID_SALESPERSON  
+      - name: ID_CARMAKE
+        description: "Clave foránea a la  dimensión de marcas (dim_carmake)"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_carmake')
+              field: ID_CARMAKE  
+      - name: TOTALSALE
+        description: "Monto total de la venta neta para ese mes, vendedor y marca"
+      - name: TOTALCOM
+        description: "Monto total de la comisión para ese mes, vendedor y marca"
+        
+-   name: dim_carmake
+    description: "Dimensión de marcas de vehículos, contiene una clave única para cada marca"
+    columns:
+      - name: ID_CARMAKE
+        description: "Identificador único de marcas de vehículos"
+        tests:
+          - unique
+          - not_null
+      - name: CARMAKE
+        description: "Nombre de cada marca de vehículo"
+        tests:
+          - not_null
+
+-   name: dim_saleperson
+    description: "Dimensión de vendedores, contiene una clave única para cada vendedor"
+    columns:
+      - name: ID_SALESPERSON
+        description: "Identificador único de vendedores"
+        tests:
+          - unique
+          - not_null
+      - name: SALESPERSON
+        description: "Nombre de cada vendedor"
+        tests:
+          - not_null
