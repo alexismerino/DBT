@@ -3,7 +3,7 @@
 }}
 
 SELECT 
-    RANK()  OVER(ORDER BY SALESPERSON)   AS ID_SALESPERSON,
+    {{generate_id('SALESPERSON')}}   AS ID_SALESPERSON,
     SALESPERSON
 FROM {{ref("psg_monthly_sales_make")}}
 GROUP BY SALESPERSON

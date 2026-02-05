@@ -4,3 +4,11 @@ models:
     columns:
       - name: DDATE
         description: "Solo se encuentran fechas de inicio de cada mes"
+      - name: SALESPERSON
+        description: "Persona que realiza la venta"
+      - name: CARMAKE
+        description: "Modelo de coche vendido"
+      - name: TOTALSALE
+        description: "Importe de la venta descontando la comisión del vendedor"
+      - name: TOTALCOM
+        description: "Importe de la comisión del vendedor"
