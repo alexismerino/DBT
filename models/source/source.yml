@@ -28,4 +28,20 @@ sources:
             description: "Comisión por la venta del coche"
           - name: COMMISSIONRATE
             description: "% de comisión por la venta del coche"
-            
+      - name: SALESPERSON
+        description: "Tabla de vendedores"
+        columns:
+          - name: SALESPERSON_ID
+            description: "Identificador único del vendedor"
+          - name: SALESPERSON_NAME
+            description: "Nombre del vendedor del coche"
+          - name: COMMISSION_RATE
+            description: "Porcentaje de comisión de venta"
+          - name: STORE_ID
+            description: "Identificador de la tienda dónde se vende el coche"
+          - name: STATUS
+            description: "Estado"
+          - name: LAST_UPDATED_TS
+            description: "Fecha de última modificación"
+
+
