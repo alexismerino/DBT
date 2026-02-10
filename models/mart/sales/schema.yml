@@ -1,6 +1,7 @@
 version: 2
 models:
 -   name: fct_monthly_sales #Tabla de hechos
+    description: '{{doc("desc_fct_monthly_sales")}}'
     columns:
       - name: ID_SALESPERSON
         description: "Clave foránea a la  dimensión de vendendores (dim_saleperson)"
