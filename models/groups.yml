@@ -1,0 +1,8 @@
+version: 2
+
+groups:
+  - name: Dev
+    owner:
+      #Email is requiered to recieve model-level notifications, additional properties are also allowed
+      name: "Dev team"
+      email: loborio70@hotmail.com
